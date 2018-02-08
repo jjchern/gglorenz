@@ -11,10 +11,12 @@
 #' @importFrom ggplot2 layer
 #' @export
 #' @examples
+#' \dontrun{
 #' library(gglorenz)
 #'
 #' ggplot(billionaires, aes(TNW)) +
 #'     stat_lorenz_generalized()
+#' }
 stat_lorenz_generalized <-
     function(mapping = NULL, data = NULL,
              geom = "path", position = "identity",
