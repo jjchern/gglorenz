@@ -9,9 +9,13 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  cache = TRUE
 )
 ```
+
+[![Travis-CI Build Status](https://travis-ci.org/jjchern/gglorenz.svg?branch=master)](https://travis-ci.org/jjchern/gglorenz)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jjchern/gglorenz?branch=master&svg=true)](https://ci.appveyor.com/project/jjchern/gglorenz)
 
 # About `gglorenz`
 
@@ -31,7 +35,7 @@ devtools::install_github("jjchern/gglorenz")
 
 Suppose you have a vector with each element represents the amount the stuff a person produced, and you are interested in knowing how much stuff are produced by the top x% of the people, then the `gglorenz::stat_lorenz(desc = TRUE)` would make a graph for you.
 
-```R
+```{r}
 library(tidyverse)
 library(gglorenz)
 
@@ -52,7 +56,7 @@ billionaires %>%
 
 billionaires %>%
     filter(Industry %in% c("Technology", "Real Estate")) %>%
-    ggplot(aes(x = tnw, colour = Industry)) +
+    ggplot(aes(x = TNW, colour = Industry)) +
     stat_lorenz(desc = TRUE) +
     coord_fixed() +
     geom_abline(linetype = "dashed") +

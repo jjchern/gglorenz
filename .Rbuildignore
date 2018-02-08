@@ -4,3 +4,6 @@
 ^README\.Rmd$
 ^LICENSE\.md$
 ^cran-comments\.md$
+^\.travis\.yml$
+^appveyor\.yml$
+^docs$
