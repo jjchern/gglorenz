@@ -21,7 +21,7 @@ devtools::install_github("jjchern/gglorenz")
 Example
 =======
 
-Suppose you have a vector with each element represents the amount the stuff a person produced, and you are interested in knowing how much stuff are produced by the top x% of the people, then the `gglorenz::stat_lorenz(desc = TRUE)` would make a graph for you.
+Suppose you have a vector with each element representing the amount the stuff a person produced, and you are interested in knowing how much stuff are produced by the top x% of the people, then the `gglorenz::stat_lorenz(desc = TRUE)` would make a graph for you.
 
 ``` r
 library(tidyverse)
