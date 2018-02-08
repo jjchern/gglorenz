@@ -39,6 +39,7 @@ stat_lorenz_generalized <-
 #' @format NULL
 #' @usage NULL
 #' @importFrom ggplot2 ggproto Stat
+#' @importFrom ineq Lc
 #' @export
 StatLorenzGeneralized <-
     ggproto("StatLorenzGeneralized", Stat,
