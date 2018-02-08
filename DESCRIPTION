@@ -1,0 +1,18 @@
+Package: gglorenz
+Title: Plotting Lorenz Curve with the Blessing of ggplot2
+Version: 0.0.1
+Authors@R: c(
+        person("JJ", "Chen", email = "jiajia.chern@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8482-8398"))
+           )
+Description: Provides statistical transformations for plotting empirical 
+    ordinary Lorenz curve and generalized Lorenz curve.
+Depends:
+    R (>= 3.2.0),
+    ggplot2 (>= 2.2.1)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/jjchern/gglorenz
+BugReports: https://github.com/jjchern/gglorenz/issues
+RoxygenNote: 6.0.1
