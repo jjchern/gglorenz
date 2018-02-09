@@ -57,7 +57,6 @@ the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
 Provides ordinary Lorenz curve values for line plots
 }
 \examples{
-\dontrun{
 library(gglorenz)
 
 ggplot(billionaires, aes(TNW)) +
@@ -68,7 +67,6 @@ ggplot(billionaires, aes(TNW)) +
     coord_fixed() +
     geom_abline(linetype = "dashed") +
     theme_minimal()
-}
 }
 \references{
 \href{https://en.wikipedia.org/wiki/Lorenz_curve}{Lorenz curve from Wikipedia}

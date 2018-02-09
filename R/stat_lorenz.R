@@ -14,7 +14,6 @@
 #' @importFrom ggplot2 layer
 #' @export
 #' @examples
-#' \dontrun{
 #' library(gglorenz)
 #'
 #' ggplot(billionaires, aes(TNW)) +
@@ -25,7 +24,6 @@
 #'     coord_fixed() +
 #'     geom_abline(linetype = "dashed") +
 #'     theme_minimal()
-#' }
 stat_lorenz <- function(mapping = NULL, data = NULL,
                         geom = "path", position = "identity",
                         ...,
