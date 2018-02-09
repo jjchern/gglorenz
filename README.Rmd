@@ -48,10 +48,11 @@ billionaires %>%
     theme_minimal() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
+    hrbrthemes::theme_ipsum() +
     labs(x = "Cumulative Percentage of the Top 500 Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Inequality Among Billionaires",
-         caption = "Source: https://www.bloomberg.com/billionaires/")
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)")
 
 billionaires %>%
     filter(Industry %in% c("Technology", "Real Estate")) %>%
@@ -62,8 +63,9 @@ billionaires %>%
     theme_minimal() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
+    hrbrthemes::theme_ipsum() +
     labs(x = "Cumulative Percentage of Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Real Estate is a Relatively Equal Field",
-         caption = "Source: https://www.bloomberg.com/billionaires/")
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)")
 ```

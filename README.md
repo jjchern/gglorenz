@@ -25,13 +25,12 @@ Suppose you have a vector with each element representing the amount the stuff a 
 
 ``` r
 library(tidyverse)
-#> ── Attaching packages ──────────────────────────────────────── tidyverse 1.2.1 ──
-#> ✔ ggplot2 2.2.1.9000     ✔ purrr   0.2.4     
+#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──
+#> ✔ ggplot2 2.2.1          ✔ purrr   0.2.4     
 #> ✔ tibble  1.4.2          ✔ dplyr   0.7.4     
 #> ✔ tidyr   0.7.2          ✔ stringr 1.2.0     
 #> ✔ readr   1.1.1.9000     ✔ forcats 0.2.0
-#> Warning: package 'tibble' was built under R version 3.4.3
-#> ── Conflicts ─────────────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 library(gglorenz)
@@ -60,10 +59,11 @@ billionaires %>%
     theme_minimal() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
+    hrbrthemes::theme_ipsum() +
     labs(x = "Cumulative Percentage of the Top 500 Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Inequality Among Billionaires",
-         caption = "Source: https://www.bloomberg.com/billionaires/")
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)")
 ```
 
 <img src="man/figures/README-unnamed-chunk-1-1.png" width="100%" />
@@ -79,10 +79,11 @@ billionaires %>%
     theme_minimal() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
+    hrbrthemes::theme_ipsum() +
     labs(x = "Cumulative Percentage of Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Real Estate is a Relatively Equal Field",
-         caption = "Source: https://www.bloomberg.com/billionaires/")
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)")
 ```
 
 <img src="man/figures/README-unnamed-chunk-1-2.png" width="100%" />
