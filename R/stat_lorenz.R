@@ -48,7 +48,7 @@ stat_lorenz <- function(mapping = NULL, data = NULL,
 #' @rdname gglorenz-package
 #' @format NULL
 #' @usage NULL
-#' @importFrom ggplot2 ggproto Stat calc
+#' @importFrom ggplot2 ggproto Stat
 #' @importFrom ineq Lc
 #' @export
 StatLorenz <- ggproto("StatLorenz", Stat,
