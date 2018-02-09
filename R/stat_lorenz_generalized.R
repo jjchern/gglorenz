@@ -43,8 +43,8 @@ stat_lorenz_generalized <-
 #' @export
 StatLorenzGeneralized <-
     ggproto("StatLorenzGeneralized", Stat,
-            default_aes = aes(x = calc(x),
-                              y = calc(generalized_Lorenz_curve)),
+            default_aes = aes(x = ..x..,
+                              y = ..generalized_Lorenz_curve..),
             required_aes = c("x"),
             compute_group = function(data, scales) {
 

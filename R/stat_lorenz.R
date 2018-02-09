@@ -52,8 +52,8 @@ stat_lorenz <- function(mapping = NULL, data = NULL,
 #' @importFrom ineq Lc
 #' @export
 StatLorenz <- ggproto("StatLorenz", Stat,
-                      default_aes = aes(x = calc(x),
-                                        y = calc(ordinary_Lorenz_curve)),
+                      default_aes = aes(x = ..x..,
+                                        y = ..ordinary_Lorenz_curve..),
                       required_aes = c("x"),
                       compute_group = function(data, scales, desc = FALSE) {
 
