@@ -18,11 +18,15 @@ knitr::opts_chunk$set(
 
 # About `gglorenz`
 
-The goal of `gglorenz` is to plot Lorenz Curves with the Blessing of `ggplot2`.
+The goal of `gglorenz` is to plot Lorenz Curves with the blessing of `ggplot2`.
 
 # Installation
 
 ```R
+# Install the CRAN version
+install.packages("gglorenz")
+
+# Install the development version from GitHub:
 # install.packages("devtools")
 devtools::install_github("jjchern/gglorenz")
 
@@ -52,7 +56,7 @@ billionaires %>%
     labs(x = "Cumulative Percentage of the Top 500 Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Inequality Among Billionaires",
-         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)")
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 
 billionaires %>%
     filter(Industry %in% c("Technology", "Real Estate")) %>%
@@ -67,5 +71,9 @@ billionaires %>%
     labs(x = "Cumulative Percentage of Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Real Estate is a Relatively Equal Field",
-         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)")
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 ```
+
+# Acknowledgement
+
+The package came to exist solely because Bob Rudis was [generous enough](https://github.com/hrbrmstr/ggalt/issues/46) to write a chapter that [demystifies `ggplot2`.](https://rud.is/books/creating-ggplot2-extensions/demystifying-ggplot2.html)

@@ -5,12 +5,16 @@
 About `gglorenz`
 ================
 
-The goal of `gglorenz` is to plot Lorenz Curves with the Blessing of `ggplot2`.
+The goal of `gglorenz` is to plot Lorenz Curves with the blessing of `ggplot2`.
 
 Installation
 ============
 
 ``` r
+# Install the CRAN version
+install.packages("gglorenz")
+
+# Install the development version from GitHub:
 # install.packages("devtools")
 devtools::install_github("jjchern/gglorenz")
 
@@ -25,12 +29,12 @@ Suppose you have a vector with each element representing the amount the stuff a 
 
 ``` r
 library(tidyverse)
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ───────────────────────────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 2.2.1          ✔ purrr   0.2.4     
 #> ✔ tibble  1.4.2          ✔ dplyr   0.7.4     
 #> ✔ tidyr   0.7.2          ✔ stringr 1.2.0     
 #> ✔ readr   1.1.1.9000     ✔ forcats 0.2.0
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ──────────────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 library(gglorenz)
@@ -63,7 +67,7 @@ billionaires %>%
     labs(x = "Cumulative Percentage of the Top 500 Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Inequality Among Billionaires",
-         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)")
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 ```
 
 <img src="man/figures/README-unnamed-chunk-1-1.png" width="100%" />
@@ -83,7 +87,12 @@ billionaires %>%
     labs(x = "Cumulative Percentage of Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Real Estate is a Relatively Equal Field",
-         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)")
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 ```
 
 <img src="man/figures/README-unnamed-chunk-1-2.png" width="100%" />
+
+Acknowledgement
+===============
+
+The package came to exist solely because Bob Rudis was [generous enough](https://github.com/hrbrmstr/ggalt/issues/46) to write a chapter that [demystifies `ggplot2`.](https://rud.is/books/creating-ggplot2-extensions/demystifying-ggplot2.html)

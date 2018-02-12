@@ -70,12 +70,16 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#about-gglorenz" class="anchor"></a>About <code>gglorenz</code>
 </h1></div>
-<p>The goal of <code>gglorenz</code> is to plot Lorenz Curves with the Blessing of <code>ggplot2</code>.</p>
+<p>The goal of <code>gglorenz</code> is to plot Lorenz Curves with the blessing of <code>ggplot2</code>.</p>
 </div>
 <div id="installation" class="section level1">
 <h1 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install the CRAN version</span>
+<span class="kw">install.packages</span>(<span class="st">"gglorenz"</span>)
+
+<span class="co"># Install the development version from GitHub:</span>
+<span class="co"># install.packages("devtools")</span>
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"jjchern/gglorenz"</span>)
 
 <span class="co"># To uninstall the package, use:</span>
@@ -86,12 +90,12 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <a href="#example" class="anchor"></a>Example</h1>
 <p>Suppose you have a vector with each element representing the amount the stuff a person produced, and you are interested in knowing how much stuff are produced by the top x% of the people, then the <code><a href="http://www.rdocumentation.org/packages/gglorenz/topics/stat_lorenz">gglorenz::stat_lorenz(desc = TRUE)</a></code> would make a graph for you.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-<span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──</span>
+<span class="co">#&gt; ── Attaching packages ───────────────────────────────────────────────── tidyverse 1.2.1 ──</span>
 <span class="co">#&gt; ✔ ggplot2 2.2.1          ✔ purrr   0.2.4     </span>
 <span class="co">#&gt; ✔ tibble  1.4.2          ✔ dplyr   0.7.4     </span>
 <span class="co">#&gt; ✔ tidyr   0.7.2          ✔ stringr 1.2.0     </span>
 <span class="co">#&gt; ✔ readr   1.1.1.9000     ✔ forcats 0.2.0</span>
-<span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; ── Conflicts ──────────────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span>
 <span class="kw">library</span>(gglorenz)
@@ -124,7 +128,7 @@ billionaires <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Cumulative Percentage of the Top 500 Billionaires"</span>,
          <span class="dt">y =</span> <span class="st">"Cumulative Percentage of Total Net Worth"</span>,
          <span class="dt">title =</span> <span class="st">"Inequality Among Billionaires"</span>,
-         <span class="dt">caption =</span> <span class="st">"Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)"</span>)</code></pre></div>
+         <span class="dt">caption =</span> <span class="st">"Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)"</span>)</code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-1-1.png" width="100%"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 billionaires <span class="op">%&gt;%</span>
@@ -140,8 +144,13 @@ billionaires <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Cumulative Percentage of Billionaires"</span>,
          <span class="dt">y =</span> <span class="st">"Cumulative Percentage of Total Net Worth"</span>,
          <span class="dt">title =</span> <span class="st">"Real Estate is a Relatively Equal Field"</span>,
-         <span class="dt">caption =</span> <span class="st">"Source: https://www.bloomberg.com/billionaires/ (accessed  February 8, 2018)"</span>)</code></pre></div>
+         <span class="dt">caption =</span> <span class="st">"Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)"</span>)</code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-1-2.png" width="100%"></p>
+</div>
+<div id="acknowledgement" class="section level1">
+<h1 class="hasAnchor">
+<a href="#acknowledgement" class="anchor"></a>Acknowledgement</h1>
+<p>The package came to exist solely because Bob Rudis was <a href="https://github.com/hrbrmstr/ggalt/issues/46">generous enough</a> to write a chapter that <a href="https://rud.is/books/creating-ggplot2-extensions/demystifying-ggplot2.html">demystifies <code>ggplot2</code>.</a></p>
 </div>
 </div>
   </div>
@@ -150,6 +159,8 @@ billionaires <span class="op">%&gt;%</span>
     <h2 class="hasAnchor">
 <a href="#sidebar" class="anchor"></a>Links</h2>
 <ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cran.r-project.org/package=gglorenz">https://​cran.r-project.org/​package=gglorenz</a>
+</li>
 <li>Browse source code at <br><a href="https://github.com/jjchern/gglorenz">https://​github.com/​jjchern/​gglorenz</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/jjchern/gglorenz/issues">https://​github.com/​jjchern/​gglorenz/​issues</a>
