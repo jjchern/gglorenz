@@ -3,7 +3,9 @@ Title: Plotting Lorenz Curve with the Blessing of 'ggplot2'
 Version: 0.0.1.9000
 Authors@R: c(
         person("JJ", "Chen", email = "jiajia.chern@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0001-8482-8398"))
+           comment = c(ORCID = "0000-0001-8482-8398")),
+        person("Hernando", "Cortina", email = "hch@alum.mit.edu", role = c("aut"),
+           comment = c(ORCID = "0000-0001-6790-4870"))   
            )
 Description: Provides statistical transformations for plotting empirical 
     ordinary Lorenz curve (Lorenz 1905) <doi:10.2307/2276207> and 
