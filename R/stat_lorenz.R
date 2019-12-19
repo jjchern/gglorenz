@@ -25,10 +25,6 @@
 #'     geom_abline(linetype = "dashed") +
 #'     theme_minimal()
 #'
-#' # Optional frequency aesthetic n
-#'
-#' ggplot(population, aes(x=TNW, n=number)) +
-#'     stat_lorenz()
 stat_lorenz <- function(mapping = NULL, data = NULL,
                         geom = "path", position = "identity",
                         ...,
