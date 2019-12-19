@@ -6,8 +6,8 @@
 #' @md
 #' @inheritParams ggplot2::geom_path
 #' @param geom which geom to use; defaults to "`path`".
-#' @param desc If FALSE, the default, population is arranged in a ascending
-#'   order along the x-axis. If TRUE, population is arranged in a descending
+#' @param desc If FALSE, the default, the population is arranged in ascending
+#'   order along the x-axis. If TRUE, the population is arranged in descending
 #'   order.
 #' @references
 #'   [Lorenz curve from Wikipedia](https://en.wikipedia.org/wiki/Lorenz_curve)
@@ -25,7 +25,7 @@
 #'     geom_abline(linetype = "dashed") +
 #'     theme_minimal()
 #'
-#'  Optional frequency aesthetic n
+#' # Optional frequency aesthetic n
 #'
 #' ggplot(population, aes(x=TNW, n=number)) +
 #'     stat_lorenz()
