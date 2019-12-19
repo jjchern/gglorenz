@@ -1,5 +1,7 @@
 ---
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -27,11 +29,8 @@ The goal of `gglorenz` is to plot Lorenz Curves with the blessing of `ggplot2`.
 install.packages("gglorenz")
 
 # Install the development version from GitHub:
-# install.packages("devtools")
-devtools::install_github("jjchern/gglorenz")
-
-# To uninstall the package, use:
-# remove.packages("gglorenz")
+# install.packages("remotes")
+remotes::install_github("jjchern/gglorenz")
 ```
 
 # Example
@@ -68,6 +67,41 @@ billionaires %>%
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
     hrbrthemes::theme_ipsum() +
+    labs(x = "Cumulative Percentage of Billionaires",
+         y = "Cumulative Percentage of Total Net Worth",
+         title = "Real Estate is a Relatively Equal Field",
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
+```
+
+You can also use other geoms such as `area` or `polygon` and arranging population in ascending order:
+
+```{r}
+billionaires %>%
+    filter(Industry %in% c("Technology", "Real Estate")) %>% 
+    add_row(Industry = "Perfect Equality", TNW = 1) %>% 
+    ggplot(aes(x = TNW, fill = Industry)) +
+    stat_lorenz(geom = "area", alpha = 0.65) +
+    coord_fixed() +
+    hrbrthemes::scale_x_percent() +
+    hrbrthemes::scale_y_percent() +
+    hrbrthemes::theme_ipsum() +
+    theme(legend.title = element_blank()) +
+    labs(x = "Cumulative Percentage of Billionaires",
+         y = "Cumulative Percentage of Total Net Worth",
+         title = "Real Estate is a Relatively Equal Field",
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
+
+billionaires %>%
+    filter(Industry %in% c("Technology", "Real Estate")) %>% 
+    mutate(Industry = forcats::as_factor(Industry)) %>% 
+    ggplot(aes(x = TNW, fill = Industry)) +
+    stat_lorenz(geom = "polygon", alpha = 0.65) +
+    geom_abline(linetype = "dashed") +
+    coord_fixed() +
+    hrbrthemes::scale_x_percent() +
+    hrbrthemes::scale_y_percent() +
+    hrbrthemes::theme_ipsum() +
+    theme(legend.title = element_blank()) +
     labs(x = "Cumulative Percentage of Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Real Estate is a Relatively Equal Field",
