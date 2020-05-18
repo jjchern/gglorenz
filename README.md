@@ -24,21 +24,22 @@ remotes::install_github("jjchern/gglorenz")
 
 # Example
 
-Suppose you have a vector with each element representing the amount the
-stuff a person produced, and you are interested in knowing how much
-stuff are produced by the top x% of the people, then the
-`gglorenz::stat_lorenz(desc = TRUE)` would make a graph for you.
+Suppose you have a vector with each element representing the amount of
+income or wealth a person produced, and you are interested in knowing
+how much of that is produced by the top x% of the population, then the
+`gglorenz::stat_lorenz(desc = TRUE)` would make a ggpplot2 graph for
+you.
 
 ``` r
 library(tidyverse)
-#> ── Attaching packages ──────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
-#> ✔ ggplot2 3.2.0     ✔ purrr   0.3.2
-#> ✔ tibble  2.1.3     ✔ dplyr   0.8.3
-#> ✔ tidyr   0.8.3     ✔ stringr 1.4.0
-#> ✔ readr   1.3.1     ✔ forcats 0.4.0
-#> ── Conflicts ─────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
+#> -- Attaching packages ---------------------------------------------------------------- tidyverse 1.3.0 --
+#> v ggplot2 3.3.0     v purrr   0.3.4
+#> v tibble  3.0.1     v dplyr   0.8.5
+#> v tidyr   1.0.3     v stringr 1.4.0
+#> v readr   1.3.1     v forcats 0.5.0
+#> -- Conflicts ------------------------------------------------------------------- tidyverse_conflicts() --
+#> x dplyr::filter() masks stats::filter()
+#> x dplyr::lag()    masks stats::lag()
 library(gglorenz)
 
 billionaires
@@ -55,7 +56,7 @@ billionaires
 #>  8 8     Larry Ellison   $54.7B          United States Technology   54.7
 #>  9 9     Larry Page      $52.6B          United States Technology   52.6
 #> 10 10    Sergey Brin     $51.2B          United States Technology   51.2
-#> # … with 490 more rows
+#> # ... with 490 more rows
 
 billionaires %>%
     ggplot(aes(TNW)) +
@@ -65,7 +66,7 @@ billionaires %>%
     theme_minimal() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
-    hrbrthemes::theme_ipsum() +
+    hrbrthemes::theme_ipsum_rc() +
     labs(x = "Cumulative Percentage of the Top 500 Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Inequality Among Billionaires",
@@ -92,7 +93,28 @@ billionaires %>%
          caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 ```
 
-<img src="man/figures/README-unnamed-chunk-1-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-1-2.png" width="100%" /> The
+annotate\_ineq() function allows you to label the chart with inequality
+statistics such as the Gini coefficient:
+
+``` r
+billionaires %>%
+    ggplot(aes(TNW)) +
+    stat_lorenz(desc = TRUE) +
+    coord_fixed() +
+    geom_abline(linetype = "dashed") +
+    theme_minimal() +
+    hrbrthemes::scale_x_percent() +
+    hrbrthemes::scale_y_percent() +
+    hrbrthemes::theme_ipsum() +
+    labs(x = "Cumulative Percentage of the Top 500 Billionaires",
+         y = "Cumulative Percentage of Total Net Worth",
+         title = "Inequality Among Billionaires",
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)") +
+  annotate_ineq(billionaires$TNW)
+```
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
 You can also use other geoms such as `area` or `polygon` and arranging
 population in ascending order:
@@ -114,7 +136,7 @@ billionaires %>%
          caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 ``` r
 
@@ -135,7 +157,7 @@ billionaires %>%
          caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-2.png" width="100%" />
 
 # Acknowledgement
 

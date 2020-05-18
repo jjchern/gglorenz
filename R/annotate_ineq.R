@@ -29,7 +29,7 @@
 #'
 #' @export
 
-annotate_ineq <- function(data_ineq, x=0.06, y=0.95, decimals=2, measure_ineq='Gini', sep_ineq=': ', ...) {
+annotate_ineq <- function(data_ineq, x=0.1, y=0.95, decimals=2, measure_ineq='Gini', sep_ineq=': ', ...) {
 
     stat_ineq <- round(ineq::ineq(data_ineq, type=measure_ineq), decimals)
 

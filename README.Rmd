@@ -11,7 +11,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  warning=FALSE
 )
 ```
 
@@ -35,7 +36,7 @@ remotes::install_github("jjchern/gglorenz")
 
 # Example
 
-Suppose you have a vector with each element representing the amount the stuff a person produced, and you are interested in knowing how much stuff are produced by the top x% of the people, then the `gglorenz::stat_lorenz(desc = TRUE)` would make a graph for you.
+Suppose you have a vector with each element representing the amount of income or wealth a person produced, and you are interested in knowing how much of that is produced by the top x% of the population, then the `gglorenz::stat_lorenz(desc = TRUE)` would make a ggpplot2 graph for you.
 
 ```{r}
 library(tidyverse)
@@ -51,7 +52,7 @@ billionaires %>%
     theme_minimal() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
-    hrbrthemes::theme_ipsum() +
+    hrbrthemes::theme_ipsum_rc() +
     labs(x = "Cumulative Percentage of the Top 500 Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Inequality Among Billionaires",
@@ -71,6 +72,25 @@ billionaires %>%
          y = "Cumulative Percentage of Total Net Worth",
          title = "Real Estate is a Relatively Equal Field",
          caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
+```
+The annotate_ineq() function allows you to label the chart with inequality statistics such as the Gini coefficient:
+
+
+```{r}
+billionaires %>%
+    ggplot(aes(TNW)) +
+    stat_lorenz(desc = TRUE) +
+    coord_fixed() +
+    geom_abline(linetype = "dashed") +
+    theme_minimal() +
+    hrbrthemes::scale_x_percent() +
+    hrbrthemes::scale_y_percent() +
+    hrbrthemes::theme_ipsum() +
+    labs(x = "Cumulative Percentage of the Top 500 Billionaires",
+         y = "Cumulative Percentage of Total Net Worth",
+         title = "Inequality Among Billionaires",
+         caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)") +
+  annotate_ineq(billionaires$TNW)
 ```
 
 You can also use other geoms such as `area` or `polygon` and arranging population in ascending order:
