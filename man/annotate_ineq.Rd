@@ -44,7 +44,10 @@ ggplot(billionaires, aes(TNW)) +
     stat_lorenz(desc = TRUE) +
     geom_abline(linetype = "dashed") +
     theme_bw() +
-    annotate_ineq(billionaires$TNW, measure_ineq='RS', color='red')
+    annotate_ineq(billionaires$TNW, measure_ineq = "RS", color = "red",
+                  family = theme_get()$text[["family"]],
+                  size = theme_get()$text[["size"]] / 2,
+                  fontface = "italic")
 
 }
 \references{
