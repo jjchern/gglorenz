@@ -6,7 +6,7 @@
 \usage{
 annotate_ineq(
   data_ineq,
-  x = 0.06,
+  x = 0.1,
   y = 0.95,
   decimals = 2,
   measure_ineq = "Gini",
@@ -17,17 +17,17 @@ annotate_ineq(
 \arguments{
 \item{data_ineq}{Data to calculate the inequality metric on.}
 
-\item{x}{annotation x-axis position, default to 0.06}
+\item{x}{annotation x-axis position, default to 0.1.}
 
-\item{y}{annotation y-axis position, defauls to 0.96}
+\item{y}{annotation y-axis position, defauls to 0.95.}
 
-\item{decimals}{number of decimals to show, defaults to 2}
+\item{decimals}{number of decimals to show, defaults to 2.}
 
-\item{measure_ineq}{Name of measure to use; defaults to Gini}
+\item{measure_ineq}{Name of measure to use; defaults to Gini.}
 
-\item{sep_ineq}{text separator between annonation label and value}
+\item{sep_ineq}{text separator between annonation label and value.}
 
-\item{...}{any additional parameters to ggplot2::annotate}
+\item{...}{any additional parameters to ggplot2::annotate().}
 }
 \description{
 Adds text annotation to chart with any inequality measure from ineq::ineq
@@ -37,7 +37,8 @@ Inequality measures include Gini, RS, Atkinson, Theil, Kol, var, square.var, ent
 library(gglorenz)
 
 ggplot(billionaires, aes(TNW)) +
-    stat_lorenz() +annotate_ineq(billionaires$TNW)
+    stat_lorenz() +
+    annotate_ineq(billionaires$TNW)
 
 ggplot(billionaires, aes(TNW)) +
     stat_lorenz(desc = TRUE) +
