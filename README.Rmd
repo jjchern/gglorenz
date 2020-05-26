@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%",
-  warning=FALSE
+  warning = FALSE
 )
 ```
 
@@ -73,6 +73,7 @@ billionaires %>%
          title = "Real Estate is a Relatively Equal Field",
          caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 ```
+
 The annotate_ineq() function allows you to label the chart with inequality statistics such as the Gini coefficient:
 
 
@@ -90,7 +91,7 @@ billionaires %>%
          y = "Cumulative Percentage of Total Net Worth",
          title = "Inequality Among Billionaires",
          caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)") +
-  annotate_ineq(billionaires$TNW)
+    annotate_ineq(billionaires$TNW)
 ```
 
 You can also use other geoms such as `area` or `polygon` and arranging population in ascending order:
