@@ -86,7 +86,7 @@ billionaires %>%
     theme_minimal() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
-    hrbrthemes::theme_ipsum() +
+    hrbrthemes::theme_ipsum_rc() +
     labs(x = "Cumulative Percentage of Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Real Estate is a Relatively Equal Field",
@@ -95,7 +95,7 @@ billionaires %>%
 
 <img src="man/figures/README-unnamed-chunk-1-2.png" width="100%" />
 
-The annotate\_ineq() function allows you to label the chart with
+The `annotate_ineq()` function allows you to label the chart with
 inequality statistics such as the Gini coefficient:
 
 ``` r
@@ -107,7 +107,7 @@ billionaires %>%
     theme_minimal() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
-    hrbrthemes::theme_ipsum() +
+    hrbrthemes::theme_ipsum_rc() +
     labs(x = "Cumulative Percentage of the Top 500 Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
          title = "Inequality Among Billionaires",
@@ -129,7 +129,7 @@ billionaires %>%
     coord_fixed() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
-    hrbrthemes::theme_ipsum() +
+    hrbrthemes::theme_ipsum_rc() +
     theme(legend.title = element_blank()) +
     labs(x = "Cumulative Percentage of Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
@@ -150,7 +150,7 @@ billionaires %>%
     coord_fixed() +
     hrbrthemes::scale_x_percent() +
     hrbrthemes::scale_y_percent() +
-    hrbrthemes::theme_ipsum() +
+    hrbrthemes::theme_ipsum_rc() +
     theme(legend.title = element_blank()) +
     labs(x = "Cumulative Percentage of Billionaires",
          y = "Cumulative Percentage of Total Net Worth",
