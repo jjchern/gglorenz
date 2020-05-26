@@ -6,10 +6,10 @@
 #' @md
 #' @param data_ineq Data to calculate the inequality metric on.
 #' @param measure_ineq Name of measure to use; defaults to Gini.
-#' @param x annotation x-axis position, default to 0.1.
-#' @param y annotation y-axis position, defauls to 0.95.
+#' @param x annotation x-axis position, defaults to 0.1.
+#' @param y annotation y-axis position, defaults to 0.95.
 #' @param decimals number of decimals to show, defaults to 2.
-#' @param sep_ineq text separator between annonation label and value.
+#' @param sep_ineq text separator between annotation label and value.
 #' @param ... any additional parameters to ggplot2::annotate().
 #'
 #' @references

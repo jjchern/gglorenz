@@ -36,7 +36,7 @@ remotes::install_github("jjchern/gglorenz")
 
 # Example
 
-Suppose you have a vector with each element representing the amount of income or wealth a person produced, and you are interested in knowing how much of that is produced by the top x% of the population, then the `gglorenz::stat_lorenz(desc = TRUE)` would make a ggpplot2 graph for you.
+Suppose you have a vector with each element representing the amount of income or wealth a person produced, and you are interested in knowing how much of that is produced by the top x% of the population, then the `gglorenz::stat_lorenz(desc = TRUE)` would make a ggplot2 graph for you.
 
 ```{r}
 library(tidyverse)

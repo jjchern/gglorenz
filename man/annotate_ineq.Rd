@@ -17,15 +17,15 @@ annotate_ineq(
 \arguments{
 \item{data_ineq}{Data to calculate the inequality metric on.}
 
-\item{x}{annotation x-axis position, default to 0.1.}
+\item{x}{annotation x-axis position, defaults to 0.1.}
 
-\item{y}{annotation y-axis position, defauls to 0.95.}
+\item{y}{annotation y-axis position, defaults to 0.95.}
 
 \item{decimals}{number of decimals to show, defaults to 2.}
 
 \item{measure_ineq}{Name of measure to use; defaults to Gini.}
 
-\item{sep_ineq}{text separator between annonation label and value.}
+\item{sep_ineq}{text separator between annotation label and value.}
 
 \item{...}{any additional parameters to ggplot2::annotate().}
 }
