@@ -68,7 +68,11 @@ StatLorenz <- ggproto("StatLorenz", Stat,
                                    non-negative frequencies", call. = FALSE)
                           }
 
-                          if (any(names(data) == 'n')) Lc <- ineq::Lc(data$x, data$n) else Lc <- ineq::Lc(data$x)
+                          if (any(names(data) == 'n')) {
+                              Lc <- ineq::Lc(data$x, data$n)
+                          } else {
+                              Lc <- ineq::Lc(data$x)
+                          }
 
                           if (desc) {
                               data.frame(x = 1 - Lc$p,
