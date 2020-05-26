@@ -4,7 +4,6 @@
 \docType{package}
 \name{gglorenz}
 \alias{gglorenz}
-\alias{gglorenz-package}
 \alias{StatLorenz}
 \alias{StatLorenzGeneralized}
 \title{gglorenz: Plotting Lorenz Curve with ggplot2}

@@ -2,9 +2,11 @@
 
 export(StatLorenz)
 export(StatLorenzGeneralized)
+export(annotate_ineq)
 export(stat_lorenz)
 export(stat_lorenz_generalized)
 importFrom(ggplot2,Stat)
+importFrom(ggplot2,annotate)
 importFrom(ggplot2,ggproto)
 importFrom(ggplot2,layer)
 importFrom(ineq,Lc)
