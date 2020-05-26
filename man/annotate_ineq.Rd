@@ -51,5 +51,5 @@ ggplot(billionaires, aes(TNW)) +
 
 }
 \references{
-\href{https://en.wikipedia.org/wiki/wiki/Gini_coefficient}{Gini coefficient from Wikipedia}
+\href{https://en.wikipedia.org/wiki/Gini_coefficient}{Gini coefficient from Wikipedia}
 }

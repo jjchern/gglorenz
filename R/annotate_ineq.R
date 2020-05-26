@@ -13,7 +13,7 @@
 #' @param ... any additional parameters to ggplot2::annotate().
 #'
 #' @references
-#'   [Gini coefficient from Wikipedia](https://en.wikipedia.org/wiki/wiki/Gini_coefficient)
+#'   [Gini coefficient from Wikipedia](https://en.wikipedia.org/wiki/Gini_coefficient)
 #' @importFrom ggplot2 annotate
 #' @examples
 #' library(gglorenz)
