@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Values of Generalized Lorenz Curve — stat_lorenz_generalized • gglorenz</title>
+<title>Annotate ggplot2 chart with inequality metric — annotate_ineq • gglorenz</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,10 @@
 
 
 
-<meta property="og:title" content="Values of Generalized Lorenz Curve — stat_lorenz_generalized" />
+<meta property="og:title" content="Annotate ggplot2 chart with inequality metric — annotate_ineq" />
 
-<meta property="og:description" content="Provides generalized Lorenz curve values for line plots" />
+<meta property="og:description" content="Adds text annotation to chart with any inequality measure from ineq::ineq
+Inequality measures include Gini, RS, Atkinson, Theil, Kol, var, square.var, entropy" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -106,94 +107,81 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Values of Generalized Lorenz Curve</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jjchern/gglorenz/blob/master/R/stat_lorenz_generalized.R'><code>R/stat_lorenz_generalized.R</code></a></small>
-    <div class="hidden name"><code>stat_lorenz_generalized.Rd</code></div>
+    <h1>Annotate ggplot2 chart with inequality metric</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jjchern/gglorenz/blob/master/R/annotate_ineq.R'><code>R/annotate_ineq.R</code></a></small>
+    <div class="hidden name"><code>annotate_ineq.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Provides generalized Lorenz curve values for line plots</p>
+    <p>Adds text annotation to chart with any inequality measure from ineq::ineq
+Inequality measures include Gini, RS, Atkinson, Theil, Kol, var, square.var, entropy</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>stat_lorenz_generalized</span>(
-  <span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>geom</span> <span class='kw'>=</span> <span class='st'>"path"</span>,
-  <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>,
-  <span class='no'>...</span>,
-  <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
-  <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+    <pre class="usage"><span class='fu'>annotate_ineq</span>(
+  <span class='no'>data_ineq</span>,
+  <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0.1</span>,
+  <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>0.95</span>,
+  <span class='kw'>decimals</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>measure_ineq</span> <span class='kw'>=</span> <span class='st'>"Gini"</span>,
+  <span class='kw'>sep_ineq</span> <span class='kw'>=</span> <span class='st'>": "</span>,
+  <span class='no'>...</span>
 )</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>mapping</th>
-      <td><p>Set of aesthetic mappings created by <code><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes()</a></code> or
-<code><a href='https://ggplot2.tidyverse.org/reference/aes_.html'>aes_()</a></code>. If specified and <code>inherit.aes = TRUE</code> (the
-default), it is combined with the default mapping at the top level of the
-plot. You must supply <code>mapping</code> if there is no plot mapping.</p></td>
+      <th>data_ineq</th>
+      <td><p>Data to calculate the inequality metric on.</p></td>
     </tr>
     <tr>
-      <th>data</th>
-      <td><p>The data to be displayed in this layer. There are three
-options:</p>
-<p>If <code>NULL</code>, the default, the data is inherited from the plot
-data as specified in the call to <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot()</a></code>.</p>
-<p>A <code>data.frame</code>, or other object, will override the plot
-data. All objects will be fortified to produce a data frame. See
-<code><a href='https://ggplot2.tidyverse.org/reference/fortify.html'>fortify()</a></code> for which variables will be created.</p>
-<p>A <code>function</code> will be called with a single argument,
-the plot data. The return value must be a <code>data.frame</code>, and
-will be used as the layer data. A <code>function</code> can be created
-from a <code>formula</code> (e.g. <code>~ head(.x, 10)</code>).</p></td>
+      <th>x</th>
+      <td><p>annotation x-axis position, default to 0.1.</p></td>
     </tr>
     <tr>
-      <th>geom</th>
-      <td><p>which geom to use; defaults to "<code>path</code>".</p></td>
+      <th>y</th>
+      <td><p>annotation y-axis position, defauls to 0.95.</p></td>
     </tr>
     <tr>
-      <th>position</th>
-      <td><p>Position adjustment, either as a string, or the result of
-a call to a position adjustment function.</p></td>
+      <th>decimals</th>
+      <td><p>number of decimals to show, defaults to 2.</p></td>
+    </tr>
+    <tr>
+      <th>measure_ineq</th>
+      <td><p>Name of measure to use; defaults to Gini.</p></td>
+    </tr>
+    <tr>
+      <th>sep_ineq</th>
+      <td><p>text separator between annonation label and value.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other arguments passed on to <code><a href='https://ggplot2.tidyverse.org/reference/layer.html'>layer()</a></code>. These are
-often aesthetics, used to set an aesthetic to a fixed value, like
-<code>colour = "red"</code> or <code>size = 3</code>. They may also be parameters
-to the paired geom/stat.</p></td>
-    </tr>
-    <tr>
-      <th>show.legend</th>
-      <td><p>logical. Should this layer be included in the legends?
-<code>NA</code>, the default, includes if any aesthetics are mapped.
-<code>FALSE</code> never includes, and <code>TRUE</code> always includes.
-It can also be a named logical vector to finely select the aesthetics to
-display.</p></td>
-    </tr>
-    <tr>
-      <th>inherit.aes</th>
-      <td><p>If <code>FALSE</code>, overrides the default aesthetics,
-rather than combining with them. This is most useful for helper functions
-that define both data and aesthetics and shouldn't inherit behaviour from
-the default plot specification, e.g. <code><a href='https://ggplot2.tidyverse.org/reference/borders.html'>borders()</a></code>.</p></td>
+      <td><p>any additional parameters to ggplot2::annotate().</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p><a href='https://en.wikipedia.org/wiki/Lorenz_curve'>Lorenz curve from Wikipedia</a></p>
+    <p><a href='https://en.wikipedia.org/wiki/wiki/Gini_coefficient'>Gini coefficient from Wikipedia</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>gglorenz</span>)
 
 <span class='fu'>ggplot</span>(<span class='no'>billionaires</span>, <span class='fu'>aes</span>(<span class='no'>TNW</span>)) +
-    <span class='fu'>stat_lorenz_generalized</span>()</div><div class='img'><img src='stat_lorenz_generalized-1.png' alt='' width='700' height='433' /></div></pre>
+    <span class='fu'><a href='stat_lorenz.html'>stat_lorenz</a></span>() +
+    <span class='fu'>annotate_ineq</span>(<span class='no'>billionaires</span>$<span class='no'>TNW</span>)</div><div class='img'><img src='annotate_ineq-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>ggplot</span>(<span class='no'>billionaires</span>, <span class='fu'>aes</span>(<span class='no'>TNW</span>)) +
+    <span class='fu'><a href='stat_lorenz.html'>stat_lorenz</a></span>(<span class='kw'>desc</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) +
+    <span class='fu'>geom_abline</span>(<span class='kw'>linetype</span> <span class='kw'>=</span> <span class='st'>"dashed"</span>) +
+    <span class='fu'>theme_bw</span>() +
+    <span class='fu'>annotate_ineq</span>(<span class='no'>billionaires</span>$<span class='no'>TNW</span>, <span class='kw'>measure_ineq</span> <span class='kw'>=</span> <span class='st'>"RS"</span>, <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
+                  <span class='kw'>family</span> <span class='kw'>=</span> <span class='fu'>theme_get</span>()$<span class='no'>text</span><span class='kw'>[[</span><span class='st'>"family"</span>]],
+                  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fu'>theme_get</span>()$<span class='no'>text</span><span class='kw'>[[</span><span class='st'>"size"</span>]] / <span class='fl'>2</span>,
+                  <span class='kw'>fontface</span> <span class='kw'>=</span> <span class='st'>"italic"</span>)</div><div class='img'><img src='annotate_ineq-2.png' alt='' width='700' height='433' /></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
