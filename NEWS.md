@@ -1,4 +1,6 @@
 
+# gglorenz 0.0.2.9000 (development version)
+
 # gglorenz 0.0.2
 
 * Added support for frequency input in dataset (PR #1, @cortinah).
