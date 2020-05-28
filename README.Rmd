@@ -16,8 +16,11 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/gglorenz)](https://CRAN.R-project.org/package=gglorenz)
 [![Travis-CI Build Status](https://travis-ci.org/jjchern/gglorenz.svg?branch=master)](https://travis-ci.org/jjchern/gglorenz)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jjchern/gglorenz?branch=master&svg=true)](https://ci.appveyor.com/project/jjchern/gglorenz)
+<!-- badges: end -->
 
 # About `gglorenz`
 

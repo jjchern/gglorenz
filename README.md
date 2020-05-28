@@ -1,10 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/gglorenz)](https://CRAN.R-project.org/package=gglorenz)
 [![Travis-CI Build
 Status](https://travis-ci.org/jjchern/gglorenz.svg?branch=master)](https://travis-ci.org/jjchern/gglorenz)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/jjchern/gglorenz?branch=master&svg=true)](https://ci.appveyor.com/project/jjchern/gglorenz)
+<!-- badges: end -->
 
 # About `gglorenz`
 
@@ -32,7 +37,7 @@ how much of that is produced by the top x% of the population, then the
 ``` r
 library(tidyverse)
 #> ── Attaching packages ─────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
-#> ✓ ggplot2 3.3.0          ✓ purrr   0.3.3.9000
+#> ✓ ggplot2 3.3.0          ✓ purrr   0.3.4.9000
 #> ✓ tibble  3.0.1          ✓ dplyr   0.8.3     
 #> ✓ tidyr   0.8.3          ✓ stringr 1.4.0     
 #> ✓ readr   1.3.1          ✓ forcats 0.4.0
