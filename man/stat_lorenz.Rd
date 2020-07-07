@@ -64,6 +64,14 @@ the default plot specification, e.g. \code{\link[ggplot2:borders]{borders()}}.}
 \description{
 Provides ordinary Lorenz curve values for line plots
 }
+\section{Aesthetics}{
+
+\code{stat_lorenz()} understands the following aesthetics:
+\itemize{
+\item x (required: wealth of individual, or set of individuals if n aesthetic used)
+\item n (optional: frequency of given observation x) }
+}
+
 \examples{
 library(gglorenz)
 
@@ -75,6 +83,10 @@ ggplot(billionaires, aes(TNW)) +
     coord_fixed() +
     geom_abline(linetype = "dashed") +
     theme_minimal()
+
+\dontrun{
+ggplot(freqdata, aes(x=value, n=freq)) +
+    stat_lorenz() }
 
 }
 \references{

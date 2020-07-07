@@ -18,7 +18,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/jjchern/gglorenz
 BugReports: https://github.com/jjchern/gglorenz/issues
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Imports: ineq
 Suggests: 
     spelling
