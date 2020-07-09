@@ -39,7 +39,7 @@ remotes::install_github("jjchern/gglorenz")
 
 # Example
 
-Suppose you have a vector with each element representing the amount of income or wealth a person produced, and you are interested in knowing how much of that is produced by the top x% of the population, then the `gglorenz::stat_lorenz(desc = TRUE)` would make a ggplot2 graph for you.
+Suppose you have a vector with each element representing the amount of income or wealth of an individual, and you are interested in knowing how much of that is produced by the top x% of the population, then the `gglorenz::stat_lorenz(desc = TRUE)` would make a ggplot2 graph for you.
 
 ```{r}
 library(tidyverse)
@@ -77,7 +77,9 @@ billionaires %>%
          caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 ```
 
-The `annotate_ineq()` function allows you to label the chart with inequality statistics such as the Gini coefficient:
+If you have a data frame with columns indicating the wealth and number of individuals at that level you can use the `n` aesthetic like so: `ggplot(freqdata, aes(x=value, n=freq) +stat_lorenz()`
+
+In addition, the `annotate_ineq()` function allows you to label the chart with inequality statistics such as the Gini coefficient:
 
 ```{r}
 billionaires %>%

@@ -9,6 +9,13 @@
 #' @param desc If FALSE, the default, the population is arranged in ascending
 #'   order along the x-axis. If TRUE, the population is arranged in descending
 #'   order.
+#'
+#' @section Aesthetics:
+#' \code{stat_lorenz()} understands the following aesthetics:
+#' \itemize{
+#' \item x (required: wealth of individual, or set of individuals if n aesthetic used)
+#' \item n (optional: frequency of given observation x) }
+#'
 #' @references
 #'   [Lorenz curve from Wikipedia](https://en.wikipedia.org/wiki/Lorenz_curve)
 #' @importFrom ggplot2 layer
@@ -24,6 +31,10 @@
 #'     coord_fixed() +
 #'     geom_abline(linetype = "dashed") +
 #'     theme_minimal()
+#'
+#' \dontrun{
+#' ggplot(freqdata, aes(x=value, n=freq)) +
+#'     stat_lorenz() }
 #'
 stat_lorenz <- function(mapping = NULL, data = NULL,
                         geom = "path", position = "identity",
@@ -54,7 +65,8 @@ stat_lorenz <- function(mapping = NULL, data = NULL,
 #' @export
 StatLorenz <- ggproto("StatLorenz", Stat,
                       default_aes = aes(x = ..x..,
-                                        y = ..ordinary_Lorenz_curve..),
+                                        y = ..ordinary_Lorenz_curve..,
+                                        n = NULL),
                       required_aes = c("x"),
                       compute_group = function(data, scales, desc = FALSE) {
 
