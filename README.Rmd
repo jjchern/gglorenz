@@ -77,7 +77,7 @@ billionaires %>%
          caption = "Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)")
 ```
 
-If you have a data frame with columns indicating the wealth and number of individuals at that level you can use the `n` aesthetic like so: `ggplot(freqdata, aes(x=value, n=freq) +stat_lorenz()`
+If you have a data frame with columns indicating the wealth and number of individuals at that level you can use the `n` aesthetic like so: `ggplot(freqdata, aes(x = value, n = freq) + stat_lorenz()`.
 
 In addition, the `annotate_ineq()` function allows you to label the chart with inequality statistics such as the Gini coefficient:
 

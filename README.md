@@ -36,12 +36,12 @@ much of that is produced by the top x% of the population, then the
 
 ``` r
 library(tidyverse)
-#> -- Attaching packages ---------------------------------------------------------- tidyverse 1.3.0 --
-#> v ggplot2 3.3.2     v purrr   0.3.4
-#> v tibble  3.0.1     v dplyr   1.0.0
-#> v tidyr   1.1.0     v stringr 1.4.0
-#> v readr   1.3.1     v forcats 0.5.0
-#> -- Conflicts ------------------------------------------------------------- tidyverse_conflicts() --
+#> ── Attaching packages ─────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+#> ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
+#> ✓ tibble  3.0.1     ✓ dplyr   1.0.0
+#> ✓ tidyr   1.1.0     ✓ stringr 1.4.0
+#> ✓ readr   1.3.1     ✓ forcats 0.4.0
+#> ── Conflicts ────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 #> x dplyr::filter() masks stats::filter()
 #> x dplyr::lag()    masks stats::lag()
 library(gglorenz)
@@ -60,7 +60,7 @@ billionaires
 #>  8 8     Larry Ellison   $54.7B          United States Technology   54.7
 #>  9 9     Larry Page      $52.6B          United States Technology   52.6
 #> 10 10    Sergey Brin     $51.2B          United States Technology   51.2
-#> # ... with 490 more rows
+#> # … with 490 more rows
 
 billionaires %>%
     ggplot(aes(TNW)) +
@@ -101,7 +101,7 @@ billionaires %>%
 
 If you have a data frame with columns indicating the wealth and number
 of individuals at that level you can use the `n` aesthetic like so:
-`ggplot(freqdata, aes(x=value, n=freq) +stat_lorenz()`
+`ggplot(freqdata, aes(x = value, n = freq) + stat_lorenz()`.
 
 In addition, the `annotate_ineq()` function allows you to label the
 chart with inequality statistics such as the Gini coefficient:

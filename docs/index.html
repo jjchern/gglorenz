@@ -92,13 +92,13 @@
 <div id="example" class="section level1">
 <h1 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h1>
-<p>Suppose you have a vector with each element representing the amount of income or wealth a person produced, and you are interested in knowing how much of that is produced by the top x% of the population, then the <code><a href="reference/stat_lorenz.html">gglorenz::stat_lorenz(desc = TRUE)</a></code> would make a ggplot2 graph for you.</p>
+<p>Suppose you have a vector with each element representing the amount of income or wealth of an individual, and you are interested in knowing how much of that is produced by the top x% of the population, then the <code><a href="reference/stat_lorenz.html">gglorenz::stat_lorenz(desc = TRUE)</a></code> would make a ggplot2 graph for you.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tidyverse)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; ── Attaching packages ─────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; ✓ ggplot2 3.3.0          ✓ purrr   0.3.4.9000</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; ✓ tibble  3.0.1          ✓ dplyr   0.8.3     </span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; ✓ tidyr   0.8.3          ✓ stringr 1.4.0     </span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; ✓ readr   1.3.1          ✓ forcats 0.4.0</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; ✓ ggplot2 3.3.0     ✓ purrr   0.3.4</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; ✓ tibble  3.0.1     ✓ dplyr   1.0.0</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; ✓ tidyr   1.1.0     ✓ stringr 1.4.0</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; ✓ readr   1.3.1     ✓ forcats 0.4.0</span></a>
 <a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; ── Conflicts ────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──</span></a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; x dplyr::filter() masks stats::filter()</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></a>
@@ -150,7 +150,8 @@
 <a class="sourceLine" id="cb3-14" data-line-number="14">         <span class="dt">title =</span> <span class="st">"Real Estate is a Relatively Equal Field"</span>,</a>
 <a class="sourceLine" id="cb3-15" data-line-number="15">         <span class="dt">caption =</span> <span class="st">"Source: https://www.bloomberg.com/billionaires/ (accessed February 8, 2018)"</span>)</a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-1-2.png" width="100%"></p>
-<p>The <code><a href="reference/annotate_ineq.html">annotate_ineq()</a></code> function allows you to label the chart with inequality statistics such as the Gini coefficient:</p>
+<p>If you have a data frame with columns indicating the wealth and number of individuals at that level you can use the <code>n</code> aesthetic like so: <code>ggplot(freqdata, aes(x = value, n = freq) + stat_lorenz()</code>.</p>
+<p>In addition, the <code><a href="reference/annotate_ineq.html">annotate_ineq()</a></code> function allows you to label the chart with inequality statistics such as the Gini coefficient:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">billionaires <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(TNW)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">    </span><span class="kw"><a href="reference/stat_lorenz.html">stat_lorenz</a></span>(<span class="dt">desc =</span> <span class="ot">TRUE</span>) <span class="op">+</span></a>
