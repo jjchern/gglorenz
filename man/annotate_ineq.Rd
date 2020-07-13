@@ -6,6 +6,7 @@
 \usage{
 annotate_ineq(
   data_ineq,
+  freq_ineq = rep(1, length(data_ineq)),
   x = 0.1,
   y = 0.95,
   decimals = 2,
@@ -16,6 +17,8 @@ annotate_ineq(
 }
 \arguments{
 \item{data_ineq}{Data to calculate the inequality metric on.}
+
+\item{freq_ineq}{(optional) Frequency of each observation, defaults to 1, should be same length as data}
 
 \item{x}{annotation x-axis position, defaults to 0.1.}
 
@@ -48,6 +51,10 @@ ggplot(billionaires, aes(TNW)) +
                   family = theme_get()$text[["family"]],
                   size = theme_get()$text[["size"]] / 2,
                   fontface = "italic")
+
+\dontrun{
+ggplot(freqdata, aes(x=value, n=freq)) +
+    stat_lorenz() +annotate_ineq(freqdata$val, freqdata$freq)}
 
 }
 \references{
